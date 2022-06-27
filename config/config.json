@@ -1,0 +1,23 @@
+{
+  "Configuration": {
+      "SocketServer" : "http://10.1.16.44",
+      "SocketServerport" : 1686,
+      "TeleToken": "1132898135:AAFjeTZU8fF6V3ZdVRadqwjOhShnsXUwQ1Y",
+      "RSTApiURLauth": "http://10.1.16.44:2911/auth/",
+      "RSTApiURLrestart": "http://10.1.16.44:2911/restart/",
+      "sqlConfig": {
+        "database": "RSvT",
+        "stream": false,
+        "type": "default",
+        "options": {
+            "encrypt": false,
+            "readOnlyIntent": true,
+            "enableArithAbort" : true
+            },
+        "port": 1433,
+        "user": "RSTadmin",
+        "password" : "P@ssw0rd12",
+        "server": "10.1.13.26"
+        }
+  }
+}

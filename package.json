@@ -1,0 +1,27 @@
+{
+  "name": "rst",
+  "version": "1.0.0",
+  "description": "restart service from telegram",
+  "main": "RSclient.js",
+  "scripts": {
+    "test": "node ."
+  },
+  "author": "dracozale",
+  "license": "ISC",
+  "dependencies": {
+    "config": "^3.3.1",
+    "express": "^4.17.1",
+    "g": "^2.0.1",
+    "http": "0.0.1-security",
+    "ip": "^1.1.5",
+    "lodash": "^4.17.19",
+    "mssql": "^6.2.0",
+    "net": "^1.0.2",
+    "nodemon": "^2.0.2",
+    "react": "^16.13.1",
+    "request": "^2.88.2",
+    "set-interval-async": "^1.0.33",
+    "socket.io": "^2.3.0",
+    "telegraf": "^3.36.0"
+  }
+}
