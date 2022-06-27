@@ -1,0 +1,72 @@
+$paramsRSsocketClient = @{
+  Name = "RSsocketClient"
+  BinaryPathName = "D:\OCC task 2019\Office COV-19\RST\RSsocketClient.exe"
+  DependsOn = "NetLogon"
+  DisplayName = "RSsocketClient"
+  StartupType = "Automatic"
+  Description = "This is a RSsocketClient service."
+}
+
+$paramsRSsocketmanager = @{
+  Name = "RSsocketmanager"
+  BinaryPathName = "D:\OCC task 2019\Office COV-19\RST\RSsocketmanager.exe"
+  DependsOn = "NetLogon"
+  DisplayName = "RSsocketmanager"
+  StartupType = "Automatic"
+  Description = "This is a RSsocketmanager service."
+}
+
+$paramsRSsocketserver = @{
+  Name = "RSsocketserver"
+  BinaryPathName = "D:\OCC task 2019\Office COV-19\RST\RSsocketserver.exe"
+  DependsOn = "NetLogon"
+  DisplayName = "RSsocketserver"
+  StartupType = "Automatic"
+  Description = "This is a RSsocketserver service."
+}
+
+$paramstelegram = @{
+  Name = "RStelegram"
+  BinaryPathName = "D:\OCC task 2019\Office COV-19\RST\telegram.exe"
+  DependsOn = "NetLogon"
+  DisplayName = "RStelegram"
+  StartupType = "Automatic"
+  Description = "This is a telegram service."
+}
+
+$paramsRSapiserver = @{
+  Name = "RSapiserver"
+  BinaryPathName = "D:\OCC task 2019\Office COV-19\RSTapi\RSapiserver.exe"
+  DependsOn = "NetLogon"
+  DisplayName = "RSapiserver"
+  StartupType = "Automatic"
+  Description = "This is a RSapiserver service."
+}
+
+New-Service @paramsRSsocketClient
+New-Service @paramsRSsocketmanager
+New-Service @paramsRSapiserver
+New-Service @paramsRSsocketserver
+New-Service @paramstelegram
+
+net start "RSsocketClient"
+net start "RSapiserver"
+net start "RStelegram"
+net start "RSsocketserver"
+net start "RSsocketmanager"
+
+
+sc delete "RSsocketClient"
+sc delete "RSapiserver"
+sc delete "RStelegram"
+sc delete "RSsocketserver"
+sc delete "RSsocketmanager"
+
+pkg -t node13-win RSsocketClient.js
+pkg -t node13-win RSsocketmanager.js
+pkg -t node13-win RSsocketserver.js
+pkg -t node13-win telegram.js
+
+
+pkg -t node13-win RSapiserver.js
+nssm set RSsocketClient AppDirectory D:\RSvT\RST\RSsocketClient.exe [Description: this is RS socket cleint service] 
